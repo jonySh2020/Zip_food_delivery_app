@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Utils",
+    "pageId": "Zip Food delivery",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n addorder: async()=>{\n\t const orderId =this.generateRandomID();\n\t await add_order.run({id:orderId});\n\t  await add_product.run({id:orderId});\n\t  await fetch_orders.run();\n\t await resetWidget('add_model');\n\t return closeModal('add_model');\n },\n\trefundOrder: async()=>{\n\t\tawait StripeRefund.run(),\n\t\t\tawait update_order_amount.run(),\n\t\t\tawait fetch_orders.run()\n\t},\n\t\n\tupdateOrder: async()=>{\n\t\tawait edit_order.run();\n\t\tawait fetch_orders.run();\n\t\treturn closeModal('Edit_order')\n\t},\n\t\n\tgenerateRandomID:() =>{\n\t\treturn '0_'+Math.random().toString(36).substr(2,9); \n\t}\n}",
+    "variables": []
+  },
+  "id": "Zip Food delivery_Utils",
+  "deleted": false,
+  "gitSyncId": "62b54a3320ae3225cef18bdb_62b6a54620ae3225cef1f1b1"
+}
